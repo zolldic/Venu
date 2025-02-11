@@ -11,9 +11,10 @@
     --fw-regular: 400;
     --fw-bold: 700;
 
-    --color-primary-dark: #4D3E5C;
-    --color-primary-light: #FFFFFF;
-    --color: #FF4FAE;
+    --color-primary-dark: #000000;
+    --color-primary-light: #F6F7F8;
+    --color-secondary-dark: #7D53DE;
+    --color-secondary-light: #FEEA00;
 
     --size-600: 3.875rem; /* 2.75rem for mobile */
     --size-400: 1.875rem;
@@ -24,18 +25,22 @@
 
 /* utilty classes */
 
+.heading, .sub-heading, .text {
+    color: var(--color-primary-dark);
+}
+
+
 .heading {
     font-family: var(--ff-header);
     font-size: var(--size-600);
     font-weight: var(--fw-bold);
-    color: var(--color-primary-dark);
+
 }
 
 .sub-heading {
     font-family: var(--ff-header);
     font-size: var(--size-400);
     font-weight: var(--fw-bold);
-    color: var(--color-primary-dark);
 }
 
 
@@ -43,8 +48,6 @@
     font-family: var(--ff-text);
     font-size: var(--size-400);
     font-weight: var(--fw-regular);
-    color: var(--color-primary-dark);
-    text-align: left;
     margin-block: .5em;
 }
 
@@ -61,8 +64,11 @@
 body {
     font-optical-sizing: auto;
     font-style: normal;
-    background: #9B78E3;
-}
+
+    background: var(--color-secondary-dark);
+    background-image: url('images/download.svg');
+    background-size: contain;
+}  
 
 .container {
     max-width: 80%;
@@ -79,7 +85,7 @@ body {
 }
 
 .card {
-    background: white;
+    background: var(--color-primary-light);
     text-align: center;
     padding: 80px 40px;
 
@@ -148,9 +154,14 @@ input[type="email"] {
     margin-top: 20px;
 }
 
-@media (min-width: 640px) {
-    .form-group {
-        flex-direction: row;
-        justify-content: center;
+
+/* @media (max-width: 675px) {
+    .heading {
+        font-size: var(--size-400);
     }
-}
+
+    .sub-heading, .text {
+        font-size: var(--size-200);
+    }
+
+} */
